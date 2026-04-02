@@ -14,4 +14,4 @@ for ($i = 1; $i -le 5; $i++) {
 }
 
 # Push all commits at once
-git push origin master
+git push origin main
