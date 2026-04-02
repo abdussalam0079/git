@@ -1,6 +1,6 @@
 # Automated Daily GitHub Commit System
 
-This repository is set up to automatically commit changes daily to maintain a GitHub contribution streak.
+This repository is set up to automatically commit 5 changes daily to maintain a GitHub contribution streak.
 
 ## Setup Instructions
 
@@ -44,8 +44,9 @@ This repository is set up to automatically commit changes daily to maintain a Gi
 
 ## How It Works
 
-- The `daily-commit.ps1` script updates `daily-log.md` with the current date and time.
-- It then adds, commits, and pushes the changes to GitHub.
+- The `daily-commit.ps1` script performs 5 commits per run.
+- For each commit, it appends a timestamped entry to `daily-log.md`.
+- It adds, commits, and finally pushes all changes to GitHub.
 - Scheduled to run daily via Task Scheduler.
 
 ## Security Note

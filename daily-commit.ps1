@@ -1,18 +1,17 @@
 # Daily Commit Script
 
-# Update the daily log with current date
-$currentDate = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$content = @"
-# Daily Commit Log
+# Perform 5 commits daily
+for ($i = 1; $i -le 5; $i++) {
+    $currentDate = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $commitMessage = "Daily commit #$i : $currentDate"
 
-This file is automatically updated daily to maintain a commit streak on GitHub.
+    # Append to the log file
+    Add-Content -Path "daily-log.md" -Value "`n- $commitMessage"
 
-Last updated: $currentDate
-"@
+    # Git commands
+    git add daily-log.md
+    git commit -m "$commitMessage"
+}
 
-$content | Out-File -FilePath "daily-log.md" -Encoding UTF8
-
-# Git commands
-git add daily-log.md
-git commit -m "Daily commit: $currentDate"
+# Push all commits at once
 git push origin master
