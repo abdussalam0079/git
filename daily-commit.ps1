@@ -15,4 +15,4 @@ $content | Out-File -FilePath "daily-log.md" -Encoding UTF8
 # Git commands
 git add daily-log.md
 git commit -m "Daily commit: $currentDate"
-git push origin main
+git push origin master
